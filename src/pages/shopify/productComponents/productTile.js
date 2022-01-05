@@ -17,7 +17,7 @@ import { updateCheckoutID } from '../../../redux/actions/shopifyActions';
 
 import styled from 'styled-components';
 import { spacing } from '@mui/system';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const Button = styled(MuiButton)(spacing)
 
