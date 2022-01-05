@@ -6,7 +6,8 @@ function JuiceboxVideoSection() {
                 muted="muted" 
                 loop="loop" 
                 playsInline="" 
-                src="assets/videos/juicebox-animation.mov" 
+                // src="assets/videos/juicebox-animation.mov" 
+                src="https://majicbucket.s3.amazonaws.com/juicebox-animation.mov" 
                 className="full-video" 
                 style={{ objectPosition: '50% 50%', display: 'block' }}
             ></video>

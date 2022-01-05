@@ -22,7 +22,7 @@ function LandingVideoSection() {
                 muted="muted" 
                 loop="loop" 
                 playsInline="" 
-                src="assets/videos/DMTNT_Cut01_720.mov" 
+                src="https://majicbucket.s3.amazonaws.com/DMTNT_Cut01_720.mov" 
                 // data-object-fit="cover" 
                 // data-object-position="50% 50%" 
                 className="splash-video" 
