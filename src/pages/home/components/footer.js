@@ -8,12 +8,14 @@ import {
 } from '@mui/material';
 import { spacing } from '@mui/system';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Divider = styled(MuiDivider)(spacing);
 const Grid = styled(MuiGrid)(spacing);
 const ListSubheader = styled(MuiListSubheader)(spacing);
 
 function Footer() {
+    const navigate = useNavigate()
     return (
         <footer>
             {/* <Grid container spacing={10}>
@@ -118,7 +120,7 @@ function Footer() {
                     @2021 Majic. All rights reserved.
                 </Grid>
                 <Grid item>
-                    <Link target="_blank" href="assets/docs/JuiceboxTOS.pdf">Terms of Service</Link>
+                    <Link onClick={() => navigate('/termsOfService')}>Terms of Service</Link>
                 </Grid>
             </Grid>
         </footer>

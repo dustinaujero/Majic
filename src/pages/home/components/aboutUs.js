@@ -19,7 +19,7 @@ function AboutUs() {
 
     return (
         <>
-            <MajicNavbar textColor="dark" noText/>
+            <MajicNavbar textColor="dark"/>
             <Divider my={3} />
             <Container className="align-items-center" fluid="sm" style={{ maxWidth: '576px'}}>
                 <Box style={{ margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

@@ -28,7 +28,7 @@ function ContactUs() {
 
     return (
         <>
-            <MajicNavbar noText />
+            <MajicNavbar textColor="dark" />
             <Divider my={3}/>
             <Grid container direction="column" alignItems="center" spacing={5} style={{ maxWidth: '700px'}} mx="auto">
                 <Grid item xs={12}>
