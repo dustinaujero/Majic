@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Majic/static/css/main.720ac472.chunk.css",
+    "main.js": "/Majic/static/js/main.24caa7c5.chunk.js",
+    "main.js.map": "/Majic/static/js/main.24caa7c5.chunk.js.map",
+    "runtime-main.js": "/Majic/static/js/runtime-main.e005eb4b.js",
+    "runtime-main.js.map": "/Majic/static/js/runtime-main.e005eb4b.js.map",
+    "static/js/2.13993ef3.chunk.js": "/Majic/static/js/2.13993ef3.chunk.js",
+    "static/js/2.13993ef3.chunk.js.map": "/Majic/static/js/2.13993ef3.chunk.js.map",
+    "static/js/3.d43da87f.chunk.js": "/Majic/static/js/3.d43da87f.chunk.js",
+    "static/js/3.d43da87f.chunk.js.map": "/Majic/static/js/3.d43da87f.chunk.js.map",
+    "index.html": "/Majic/index.html",
+    "static/css/main.720ac472.chunk.css.map": "/Majic/static/css/main.720ac472.chunk.css.map",
+    "static/js/2.13993ef3.chunk.js.LICENSE.txt": "/Majic/static/js/2.13993ef3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e005eb4b.js",
+    "static/js/2.13993ef3.chunk.js",
+    "static/css/main.720ac472.chunk.css",
+    "static/js/main.24caa7c5.chunk.js"
+  ]
+}
