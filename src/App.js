@@ -3,6 +3,7 @@ import './App.css';
 import {
   Route,
   Routes,
+  Navigate
 } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
 import darkTheme from './mui/theme'; 
@@ -17,6 +18,7 @@ import Products from './pages/shopify/products';
 import ContactUs from './pages/home/components/contactUs';
 import AboutUs from './pages/home/components/aboutUs';
 import ProductDetails from './pages/shopify/productDetails';
+import TOS from './pages/home/components/TOS';
 
 function App() {
   const theme = useMemo(() => createTheme(darkTheme()), [])
@@ -33,7 +35,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <Provider store={configureStore()}>
         <Routes>
+          <Route path="*" element={<Navigate replace to="/" />} />
           <Route path="/" element={<Homepage />} />
+          <Route path="/termsOfService" element={<TOS />} />
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
           <Route path="/products" element={<Products />} />
