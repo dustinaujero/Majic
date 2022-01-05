@@ -38,7 +38,7 @@ function MajicNavbar({ textColor = 'light', noText = false }) {
             {/* <div onClick={() => navigate('/')}>
                 <Image rounded src="assets/images/output-logo-mobile.svg" style={{ width: '60px', height: '60px' }} className="text-light" />
             </div> */}
-            <h2 onClick={() => navigate('/')} className={`text-${textColor} m-0 p-0`}>Majic</h2>
+            <h2 onClick={() => navigate('/')} className={`text-${textColor} m-0 p-0`}>Juicebox</h2>
             {!noText && <Navbar className="d-flex flex-grow-1 justify-content-end mr-2" expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav " className="justify-content-end"/>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
