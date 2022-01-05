@@ -1,7 +1,6 @@
 import { useMemo, useEffect } from 'react';
 import './App.css';
 import {
-  BrowserRouter,
   Route,
   Routes,
 } from 'react-router-dom';
@@ -33,17 +32,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={configureStore()}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/productDetails/:productID" element={<ProductDetails />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/productDetails/:productID" element={<ProductDetails />} />
+        </Routes>
       </Provider>
     </ThemeProvider>
   );

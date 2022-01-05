@@ -16,7 +16,7 @@ import {
     ListItemIcon,
     ListItemText,
 } from '@mui/material';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Close, ShoppingBag } from '@mui/icons-material';
 import Cart from '../../shopify/cart';
 
