@@ -13,11 +13,8 @@ import {
 } from 'react-bootstrap';
 import { 
     Account,
-    Arcade,
     Downloads,
     Orders,
-    Referrals,
-    Subscriptions
 } from './components';
 import { 
     Divider as MuiDivider
@@ -36,7 +33,7 @@ function Login() {
     const [activePage, setActivePage] = useState('account')
 
     return (<>
-        <MajicNavbar noText />
+        <MajicNavbar textColor='dark'/>
         <Divider my={5}/>
         <Container className="align-items-center" fluid="sm" style={{ maxWidth: '992px'}}>
 
@@ -51,14 +48,6 @@ function Login() {
                             onClick={() => setActivePage('account')}
                         >Account</Nav.Link>
                         <Nav.Link 
-                            className={`text-dark fw-bold smooth hover-underline ${activePage === 'subscriptions' ? 'text-decoration-underline' : ''}`}
-                            onClick={() => setActivePage('subscriptions')}
-                        >Subscriptions</Nav.Link>
-                        <Nav.Link 
-                            className={`text-dark fw-bold smooth hover-underline ${activePage === 'arcade' ? 'text-decoration-underline' : ''}`}
-                            onClick={() => setActivePage('arcade')}
-                        >Arcade</Nav.Link>
-                        <Nav.Link 
                             className={`text-dark fw-bold smooth hover-underline ${activePage === 'orders' ? 'text-decoration-underline' : ''}`}
                             onClick={() => setActivePage('orders')}
                         >Orders</Nav.Link>
@@ -66,10 +55,6 @@ function Login() {
                             className={`text-dark fw-bold smooth hover-underline ${activePage === 'downloads' ? 'text-decoration-underline' : ''}`}
                             onClick={() => setActivePage('downloads')}
                         >Downloads</Nav.Link>
-                        <Nav.Link 
-                            className={`text-dark fw-bold smooth hover-underline ${activePage === 'referrals' ? 'text-decoration-underline' : ''}`}
-                            onClick={() => setActivePage('referrals')}
-                        >Referrals</Nav.Link>
                         <Nav.Link 
                             className={`text-dark fw-bold smooth hover-underline ${activePage === 'logout' ? 'text-decoration-underline' : ''}`}
                             onClick={() => navigate('/login')}
@@ -80,11 +65,8 @@ function Login() {
 
             <main className="container-sm">
                 {activePage === 'account' && <Account />}
-                {activePage === 'subscriptions' && <Subscriptions />}
-                {activePage === 'arcade' && <Arcade />}
                 {activePage === 'orders' && <Orders />}
                 {activePage === 'downloads' && <Downloads />}
-                {activePage === 'referrals' && <Referrals />}
             </main>
 
         </Container></>

@@ -24,6 +24,7 @@ export default (state = nullState, action) => {
         }
         case RECEIVE_CHECKOUT_ID: {
             const { checkoutID } = action
+            console.log("updating stored checkout id")
             localStorage.setItem('checkoutID', checkoutID)
             return merge({}, state, { checkoutID })
         }

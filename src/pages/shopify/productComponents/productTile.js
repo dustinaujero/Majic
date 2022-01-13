@@ -110,8 +110,12 @@ const ProductTile = ({ product }) => {
                     {status == 'available' && <Typography>
                         Add to Cart
                     </Typography>}
-                    {status == 'loading' && <CircularProgress />}
-                    {status == 'added' && <Typography>Added</Typography>}
+                    {status == 'loading' && <Typography>
+                        <CircularProgress />
+                    </Typography>}
+                    {status == 'added' && <Typography>
+                        Added
+                    </Typography>}
                 </Button>
             </CardActions>
         </Card>

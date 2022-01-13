@@ -15,12 +15,14 @@ import {
     Button as MuiButton,
     Grid,
     FormControl,
-    TextField
+    TextField,
+    Divider as MuiDivider,
  } from '@mui/material';
 import { spacing } from '@mui/system';
 import styled from 'styled-components';
 
 const Button = styled(MuiButton)(spacing)
+const Divider = styled(MuiDivider)(spacing)
 
 function Account() {
     const navigate = useNavigate()
@@ -40,7 +42,7 @@ function Account() {
                     Log Out
                 </Button>
             </div>
-
+            <Divider mb={4}/>
             <Form>
                 <Container className="px-0">
                     <Row >

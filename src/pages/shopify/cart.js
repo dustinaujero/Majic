@@ -6,6 +6,7 @@ import {
     IconButton,
     Typography as MuiTypography,
     Button as MuiButton,
+    Avatar,
 } from '@mui/material';
 import { Delete } from '@mui/icons-material';
 import { connect } from 'react-redux';
@@ -97,6 +98,13 @@ class Cart extends React.Component {
                     {this.state.lineItems.map(product => <Grid item xs={12} key={product.id}>
                         <Divider my={2} />
                         <Grid container spacing={5}>
+                            <Grid item>
+                                <Avatar
+                                    alt={product.title} 
+                                    src={product.variant.image.src}
+                                    variant='rounded'
+                                />
+                            </Grid>
                             <Grid item xs>
                                 <Typography>{product.title}</Typography>
                                 <Typography>{product.variant.price}</Typography>

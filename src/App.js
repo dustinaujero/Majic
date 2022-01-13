@@ -19,6 +19,7 @@ import ContactUs from './pages/home/components/contactUs';
 import AboutUs from './pages/home/components/aboutUs';
 import ProductDetails from './pages/shopify/productDetails';
 import TOS from './pages/home/components/TOS';
+import JuiceboxPlugin from './pages/shopify/juicebox';
 
 function App() {
   const theme = useMemo(() => createTheme(darkTheme()), [])
@@ -41,6 +42,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/juicebox" element={<JuiceboxPlugin />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/productDetails/:productID" element={<ProductDetails />} />

@@ -31,14 +31,14 @@ function MajicNavbar({ textColor = 'light', noText = false }) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
                         <Nav.Link onClick={() => setOpenDrawer('shop')} className={`text-${textColor} smooth hover-underline`}>Shop</Nav.Link>
-                        <Nav.Link onClick={() => setOpenDrawer('learn')} className={`text-${textColor} smooth hover-underline`}>Learn</Nav.Link>
+                        <Nav.Link onClick={() => navigate('/aboutUs')} className={`text-${textColor} smooth hover-underline`}>Learn</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>}
             {/* <div onClick={() => navigate('/')}>
                 <Image rounded src="assets/images/output-logo-mobile.svg" style={{ width: '60px', height: '60px' }} className="text-light" />
             </div> */}
-            <h2 onClick={() => navigate('/')} className={`text-${textColor} m-0 p-0`}>Jukebox</h2>
+            <h1 onClick={() => navigate('/')} className={`text-${textColor} m-0 p-0`}>Jukebox</h1>
             {!noText && <Navbar className="d-flex flex-grow-1 justify-content-end mr-2" expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav " className="justify-content-end"/>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
@@ -71,7 +71,7 @@ function MajicNavbar({ textColor = 'light', noText = false }) {
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav>
                                     <Nav.Link onClick={() => setOpenDrawer('shop')} className={`text-dark smooth hover-underline ${openDrawer === 'shop' ? 'text-decoration-underline' : ''}`}>Shop</Nav.Link>
-                                    <Nav.Link onClick={() => setOpenDrawer('learn')} className={`text-dark smooth hover-underline ${openDrawer === 'learn' ? 'text-decoration-underline' : ''}`}>Learn</Nav.Link>
+                                    {/* <Nav.Link onClick={() => navigate('/aboutUs')} className={`text-dark smooth hover-underline ${openDrawer === 'learn' ? 'text-decoration-underline' : ''}`}>Learn</Nav.Link> */}
                                 </Nav>
                             </Navbar.Collapse>
                         </Navbar>
@@ -87,7 +87,12 @@ function MajicNavbar({ textColor = 'light', noText = false }) {
                         {openDrawer === 'shop' && <List className={`animate__animated ${openDrawer === 'learn' ? 'animate__fadeOutLeft' : ''}`}>
                             <ListItem button >
                                 <ListItemText className="animate__animated animate__fadeInLeft">
-                                    <h2 className="fw-bold" onClick={() => navigate('/products')}>All Products</h2>
+                                    <h2 className="fw-bold" onClick={() => navigate('/juicebox')}>Juicebox</h2>
+                                </ListItemText>
+                            </ListItem>
+                            <ListItem button >
+                                <ListItemText className="animate__animated animate__fadeInLeft">
+                                    <h2 className="fw-bold" onClick={() => navigate('/products')}>Preset Packs</h2>
                                 </ListItemText>
                             </ListItem>
                             {/* <ListItem button >
@@ -119,18 +124,6 @@ function MajicNavbar({ textColor = 'light', noText = false }) {
                                     <h2 className="fw-bold">Frontier Speakers</h2>
                                 </ListItemText>
                             </ListItem> */}
-                        </List>}
-                        {openDrawer === 'learn' && <List>
-                            <ListItem button >
-                                <ListItemText className="animate__animated animate__fadeInLeft animate__delay-1s">
-                                    <h2 className="fw-bold" onClick={() => navigate('/aboutUs')}>Company</h2>
-                                </ListItemText>
-                            </ListItem>
-                            <ListItem button >
-                                <ListItemText className="animate__animated animate__fadeInLeft animate__delay-2s">
-                                    <h2 className="fw-bold" onClick={() => navigate('/contact')}>Support</h2>
-                                </ListItemText>
-                            </ListItem>
                         </List>}
                     </Grid>
                 </Grid>

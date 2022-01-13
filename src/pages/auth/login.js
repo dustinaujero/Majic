@@ -32,8 +32,8 @@ function Login() {
     })
     const handlePreventDefault = event => event.preventDefault()
     useEffect(() => {
-
-    }, [])
+        console.log('login client', client)
+    }, [client])
     return (
         <>
             <MajicNavbar textColor="dark" />

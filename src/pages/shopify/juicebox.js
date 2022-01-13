@@ -25,18 +25,18 @@ const Grid = styled(MuiGrid)(spacing);
 const Box = styled(MuiBox)(spacing);
 const Typography = styled(MuiTypography)(spacing);
 // Initializing a client to return content in the store's primary language
-function ProductDetails() {
+function JuiceboxPlugin() {
+    const productID = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY5MDYyMzAzNzQ0NDU='
     const [product, setProduct] = useState('')
-    const params = useParams()
     const client = useSelector(state => state.shopify.client)
     useEffect(() => {
-        if (params.productID) {
-            client?.product.fetch(params.productID).then(data => {
-                console.log('product details', data)
-                setProduct(data)
-            })
+        if (client && !product) {
+            client.product.fetch(productID).then((product) => {
+                // Do something with the product
+                setProduct(product)
+            });
         }
-    }, [params])
+    }, [client])
 
     const navigate = useNavigate()
     const checkoutID = useSelector(state => state.shopify.checkoutID)
@@ -67,13 +67,13 @@ function ProductDetails() {
                 checkCartForProduct(checkout.lineItems)
             });
         }
-    }, [product])
+    }, [])
 
     const dispatch = useDispatch()
 
     const addToCart = () => {
         setStatus('loading')
-        console.log('product id', product.variants[0].id);
+        console.log('product id', product.variants[0].id, product);
         console.log('checkout id', checkoutID);
         
         if (!checkoutID) {
@@ -105,6 +105,7 @@ function ProductDetails() {
         }
         
     }
+
     return (<>
         <MajicNavbar textColor='dark' />
         <Divider my={3}/>
@@ -128,7 +129,17 @@ function ProductDetails() {
                             <Typography variant="h3" className="fw-bold">{product.title}</Typography>
                             <Typography my={2}>{product.description}</Typography>
                             <Typography my={2} variant="body2">${product.variants[0].price}</Typography>
-                            <Button variant="contained" onClick={addToCart}>Add to Cart</Button>
+                            <Button variant="contained" onClick={addToCart}>
+                                {status == 'available' && <Typography>
+                                    Add to Cart
+                                </Typography>}
+                                {status == 'loading' && <Typography>
+                                    <CircularProgress />
+                                </Typography>}
+                                {status == 'added' && <Typography>
+                                    Added
+                                </Typography>}
+                            </Button>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -138,4 +149,4 @@ function ProductDetails() {
 
 }
 
-export default ProductDetails
+export default JuiceboxPlugin
