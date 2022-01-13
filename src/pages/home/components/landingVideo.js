@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LandingVideoSection() {
     const videoRef = useRef()
@@ -8,15 +9,16 @@ function LandingVideoSection() {
             videoRef.current.play()
         }
     }, [videoRef])
+    const navigate = useNavigate()
     return (
         <section style={{ height: 'calc(100vh - var(--header-height))' }}>
-            {/* <div className="video-container d-flex flex-column align-items-center justify-content-center">
+            <div className="video-container d-flex flex-column align-items-center justify-content-center">
                 <h1 className="text-white fw-bold" style={{ fontSize: '10em' }}>Juicebox</h1>
-                <h4 className="text-white fw-bold mb-5" style={{  }}>The Majic Sauce</h4>
-                <button className="rounded-pill border-0 bg-yellow px-5 py-3">
-                    <h5 className="fw-bold my-0" style={{  }}>Check it out.</h5>
+                {/* <h4 className="text-white fw-bold mb-5" style={{  }}>The Majic Sauce</h4> */}
+                <button className="rounded-pill border-0 bg-white px-5 py-3" onClick={() => navigate('/products')}>
+                    <h5 className="fw-bold my-0" >Try Juicebox now.</h5>
                 </button>
-            </div> */}
+            </div>
             <video 
                 autoPlay="autoplay" 
                 muted="muted" 

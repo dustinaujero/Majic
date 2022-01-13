@@ -31,14 +31,22 @@ function MajicNavbar({ textColor = 'light', noText = false }) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
                         <Nav.Link onClick={() => setOpenDrawer('shop')} className={`text-${textColor} smooth hover-underline`}>Shop</Nav.Link>
-                        <Nav.Link onClick={() => navigate('/aboutUs')} className={`text-${textColor} smooth hover-underline`}>Learn</Nav.Link>
+                        <Nav.Link onClick={() => navigate('/aboutUs')} className={`text-${textColor} smooth hover-underline`}>About</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>}
             {/* <div onClick={() => navigate('/')}>
                 <Image rounded src="assets/images/output-logo-mobile.svg" style={{ width: '60px', height: '60px' }} className="text-light" />
             </div> */}
-            <h1 onClick={() => navigate('/')} className={`text-${textColor} m-0 p-0`}>Jukebox</h1>
+            <h1 onClick={() => navigate('/')} className={`text-${textColor} m-0 p-0`}>
+                <Image 
+                    src='assets/images/Juicebox-Logo-wht-hires.png'
+                    style={{ 
+                        maxWidth: '3em',
+                        filter: textColor === 'dark' ? 'invert(100%)' : ''
+                    }}
+                />
+            </h1>
             {!noText && <Navbar className="d-flex flex-grow-1 justify-content-end mr-2" expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav " className="justify-content-end"/>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">

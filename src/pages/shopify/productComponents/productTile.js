@@ -21,7 +21,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Button = styled(MuiButton)(spacing)
 
-const ProductTile = ({ product }) => {
+const ProductTile = ({ product, withDescription = false }) => {
     const navigate = useNavigate()
     const client = useSelector(state => state.shopify.client)
     const checkoutID = useSelector(state => state.shopify.checkoutID)
@@ -103,7 +103,7 @@ const ProductTile = ({ product }) => {
             <CardContent onClick={() => navigate(`/productDetails/${product.id}`)}>
                 <Typography>{product.title}</Typography>
                 <Typography variant='h6'>${product.variants[0].price || ''}</Typography>
-                {/* <Typography>{product.description}</Typography> */}
+                {withDescription && <Typography>{product.description}</Typography>}
             </CardContent>
             <CardActions>
                 <Button color="primary" variant="contained" fullWidth disabled={!product.variants[0]} onClick={addToCart}>

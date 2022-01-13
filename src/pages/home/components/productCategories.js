@@ -8,6 +8,7 @@ import { Image } from 'react-bootstrap';
 import Client from 'shopify-buy';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import ProductTile from '../../shopify/productComponents/productTile';
 
 const Grid = styled(MuiGrid)(spacing)
 
@@ -18,18 +19,19 @@ function ProductCategories() {
     useEffect(() => {
         if (shopifyClient && !products.length) {
             // Fetch all products in your shop
-            shopifyClient.product.fetchAll().then((data) => {
+            shopifyClient.collection.fetchWithProducts("Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2NDY3MDE4MzQ2OQ==").then((data) => {
                 // Do something with the products
     
                 console.log('products', data)
-                const products = []
-                for (let i = 0; i < data.length; i++) {
-                    const product = data[i];
+                const products = data.products
+                const finalProducts = []
+                for (let i = 0; i < products.length; i++) {
+                    const product = products[i];
                     if (product) {
-                        products.push(product)
+                        finalProducts.push(product)
                     }
                 }
-                setProducts(products)
+                setProducts(finalProducts)
             });
         }
     }, [shopifyClient]) 
@@ -37,16 +39,13 @@ function ProductCategories() {
         <Grid container direction="column" alignItems="center">
             <Grid item xs alignItems="center">
                 <h1 className="text-center mx-auto fw-bold" style={{ fontSize: '8em', marginTop: '1em', maxWidth: '80%', marginBottom: '0.5em' }}>
-                    We help <br /> you make music
+                    Preset Packs
                 </h1>
-                <h3 className="text-center" style={{ marginBottom: '3.5em' }}>
-                    Majic makes cutting edge software and gear for musicians so you can focus on being the creative.
-                </h3>
             </Grid>
         </Grid>
         <Grid container spacing={10} mb={10}>
-            {products.map(product => <Grid item xs={12} sm={6} key={product.id}>
-                <Grid container direction="column" alignItems="center">
+            {products.map(product => <Grid item xs={12} sm={6} md={3} key={product.id}>
+                {/* <Grid container direction="column" alignItems="center">
                     <h3 className="mb-2 fw-bold" style={{ maxWidth: '80%', fontSize: '3.5em' }}>{product.title}</h3>
                     <h5 className="mb-4" style={{ maxWidth: '80%' }}>{product.description}</h5>
                     <Image 
@@ -55,7 +54,8 @@ function ProductCategories() {
                         width="90%"
                         className="strong-shadow"
                     />
-                </Grid>
+                </Grid> */}
+                <ProductTile product={product} withDescription />
             </Grid>)}
         </Grid>
     </section>)

@@ -9,9 +9,12 @@ const Grid = styled(MuiGrid)(spacing);
 
 function JuiceboxVideoSection() {
     return (
-        <section style={{ height: '80vh' }}>
+        <section style={{ height: '100vh' }}>
             <Grid container alignItems="center" justifyContent="center" direction="column" my={3} style={{ height: '100%' }}>
                 <Grid item>
+                    <h2 className="text-center mx-auto fw-bold" style={{ fontSize: '8em', marginTop: '1em', maxWidth: '80%', marginBottom: '0.5em' }}>
+                        Buy Juicebox
+                    </h2>
                     <video 
                         autoPlay="autoplay" 
                         muted="muted" 

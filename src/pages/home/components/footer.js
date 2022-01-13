@@ -120,7 +120,7 @@ function Footer() {
                     @2021 Majic. All rights reserved.
                 </Grid>
                 <Grid item>
-                    <Link onClick={() => navigate('/contact')}>Support</Link>
+                    <Link onClick={() => navigate('/contact')}>Support/Help</Link>
                     <Link onClick={() => navigate('/termsOfService')} style={{ marginLeft: '30px' }}>Terms of Service</Link>
                 </Grid>
             </Grid>
